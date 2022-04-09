@@ -5,32 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Hello, world!</title>
+<style>
+    body {
+        font: 14px "Century Gothic", Futura, sans-serif;
+        margin: 20px;
+    }
 
+    ol, ul {
+        padding-left: 30px;
+    }
+
+    .board-row:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .status {
+        margin-bottom: 10px;
+    }
+
+    .square {
+        background: #fff;
+        border: 1px solid #999;
+        float: left;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 34px;
+        height: 34px;
+        margin-right: -1px;
+        margin-top: -1px;
+        padding: 0;
+        text-align: center;
+        width: 34px;
+    }
+
+    .square:focus {
+        outline: none;
+    }
+
+    .kbd-navigation .square:focus {
+        background: #ddd;
+    }
+
+    .game {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .game-info {
+        margin-left: 20px;
+    }
+
+</style>
 </head>
 <body id="main">
-
+<div id="root"></div>
 <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-<!--<script type="text/jsx" src="js/main.js"></script>-->
+<script type="text/jsx" src="js/main.js"></script>
 <script>
-    let root = {
-        node:"div",
-        id:"root",
-        name:"title",
-        content:"123"
-    }
-    let PB = {
-        createElement(pbnode){
-            let newElement = document.createElement(pbnode.node)
-            newElement.setAttribute("id",pbnode.id)
-            newElement.setAttribute("name",pbnode.name)
-            newElement.innerHTML = pbnode.content
-            return newElement
-        }
-    }
-    let main = document.getElementById("main")
-    main.append(PB.createElement(root))
+
 </script>
 </body>
 </html>
