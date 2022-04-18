@@ -56,11 +56,11 @@ module.exports = {
     resolve: {
         alias: {
             'src': path.resolve(__dirname, 'src'),
-            'img': path.resolve(__dirname, 'src/img'),
-            'components': path.resolve(__dirname, 'src/components'),
-            'page': path.resolve(__dirname, 'src/page'),
-            'fonts': path.resolve(__dirname, 'src/fonts'),
-            'data': path.resolve(__dirname, 'src/data'),
+            // 'img': path.resolve(__dirname, 'src/img'),
+            // 'components': path.resolve(__dirname, 'src/components'),
+            // 'page': path.resolve(__dirname, 'src/page'),
+            // 'fonts': path.resolve(__dirname, 'src/fonts'),
+            // 'data': path.resolve(__dirname, 'src/data'),
         }
     },
 
