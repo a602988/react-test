@@ -12,7 +12,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './src/jsx/app.jsx',
+        app: './src/jsx/main.jsx',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
