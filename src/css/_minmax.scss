@@ -1,0 +1,33 @@
+
+//
+// text
+//
+$mr-color:var(--mr_body-color);//基底顏色
+$mr-color-light:$gray-800;
+
+//移除button樣式
+.btn-unstyle{
+  background-color:transparent;
+  border:none;
+  padding:0;
+  text-align:inherit;
+  &:focus{
+    outline:0;
+    box-shadow:inherit;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --mr_body-bg: #000000;
+    --mr_body-color: #ffffff;
+  }
+  img,source,picture{
+    background-color:var(--mr_body-bg);
+  }
+  img,
+  video,
+  iframe {
+    filter: brightness(1);
+  }
+}
