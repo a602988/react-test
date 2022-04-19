@@ -13,4 +13,4 @@ import 'jquery';
 
 //PAGE
 // import 'src/jsx/main.jsx';
-import 'src/jsx/main2.js';
+import 'src/page/test/test.js';
