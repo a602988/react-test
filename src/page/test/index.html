@@ -7,52 +7,25 @@
 
     <title>Silly story generator</title>
 
-    <style>
-
-        body {
-            font-family: helvetica, sans-serif;
-            width: 350px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        div {
-            padding-bottom: 20px;
-        }
-
-        input[type="text"] {
-            padding: 5px;
-            width: 150px;
-        }
-
-        p {
-            background: #FFC125;
-            color: #5E2612;
-            padding: 10px;
-            visibility: hidden;
-        }
-
-    </style>
 </head>
 
 <body>
-<div>
-    <label for="customname">Enter custom name:</label>
-    <input id="customname" type="text" placeholder="">
-</div>
-<div>
-    <label for="us">US</label><input id="us" type="radio" name="ukus" value="us" checked>
-    <label for="uk">UK</label><input id="uk" type="radio" name="ukus" value="uk">
-</div>
-<div>
-    <button class="randomize">Generate random story</button>
-</div>
-<!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
-<p class="story"></p>
+<h1>Image gallery example</h1>
 
+<div class="full-img">
+    <img class="displayed-img" src="~img/example/test1.jpeg">
+    <div class="overlay"></div>
+    <button class="dark">Darken</button>
+</div>
 
-
+<div class="thumb-bar">
+<ul>
+    <li><img src="~img/example/test1.jpeg" alt="test1"></li>
+    <li><img src="~img/example/test2.jpeg" alt="test2"></li>
+    <li><img src="~img/example/test3.jpeg" alt="test3"></li>
+    <li><img src="~img/example/test4.jpeg" alt="test4"></li>
+    <li><img src="~img/example/test5.jpeg" alt="test5"></li>
+</ul>
+</div>
 </body>
 </html>

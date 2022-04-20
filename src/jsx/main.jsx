@@ -4,16 +4,16 @@
     - 宣告：取得圖片路徑
     - 如果圖片路徑 = Ａ那就顯示B，不然就顯示A
  */
-import imgA from "../img/example/istockphoto-1044460430-612x612.jpeg";
-import imgB from "../img/example/istockphoto-1181011006-612x612.jpeg";
+import imgA from "../img/example/test4.jpeg";
+import imgB from "../img/example/test5.jpeg";
 var myImage = document.querySelector('img');
 
 myImage.onclick = function() {
   let mySrc = myImage.getAttribute('src');
-  if(mySrc === './img/istockphoto-1044460430-612x612.jpeg') {
-    myImage.setAttribute ('src','./img/istockphoto-1181011006-612x612.jpeg');
+  if(mySrc === './img/test4.jpeg') {
+    myImage.setAttribute ('src','./img/test5.jpeg');
   } else {
-    myImage.setAttribute ('src','./img/istockphoto-1044460430-612x612.jpeg');
+    myImage.setAttribute ('src','./img/test4.jpeg');
   }
 }
 

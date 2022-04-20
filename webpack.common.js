@@ -11,9 +11,6 @@ for(let i in htmlconfig) {
     htmlarr.push(new HtmlWebpackPlugin(htmlconfig[i]));
 }
 
-// 清空dist文件夹
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 
 
 module.exports = {
@@ -43,7 +40,6 @@ module.exports = {
         hot: true,
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[hash:3].css',
         }),
