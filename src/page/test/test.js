@@ -1,9 +1,17 @@
-const bigimg = document.querySelector('.displayed-img');
-const overlay = document.querySelector('.overlay');
-const btn  = document.querySelector('button.dark');
-const thumbs = document.querySelectorAll('.thumb-bar ul li');
-console.log(thumbs);
-
-function changeImg(){
-    console.log(1)
-}
+$("li.dropdown").hover(
+  function(){
+      $(this).children(".dropdown").show();
+      $(this).children(".dropdown").stop();
+      $(this).children(".dropdown").animate({
+          opacity:1
+      },200)
+  },function(){
+      $(this).children(".dropdown").stop();
+      $(this).children(".dropdown").animate({
+          opacity:0
+        },400,function(){
+            $(this).hide()
+        }
+      )
+  }
+)

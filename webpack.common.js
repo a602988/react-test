@@ -10,7 +10,7 @@ const htmlarr=[];
 for(let i in htmlconfig) {
     htmlarr.push(new HtmlWebpackPlugin(htmlconfig[i]));
 }
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].[contenthash].js',
+        filename: 'js/[name].js',
     },
     optimization: {
         moduleIds: 'deterministic',
@@ -40,6 +40,12 @@ module.exports = {
         hot: true,
     },
     plugins: [
+        new CopyWebpackPlugin({
+            patterns: [{
+                from: "src/img",
+                to: "img"
+            }]
+        }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[hash:3].css',
         }),
@@ -52,7 +58,6 @@ module.exports = {
     resolve: {
         alias: {
             'src': path.resolve(__dirname, 'src'),
-            'img': path.resolve(__dirname, 'src/img'),
             'components': path.resolve(__dirname, 'src/components'),
             'page': path.resolve(__dirname, 'src/page'),
             'fonts': path.resolve(__dirname, 'src/fonts'),
@@ -75,15 +80,6 @@ module.exports = {
                     filename: 'css/[name][ext][query]'
                 }
             },
-
-            {
-                test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'img/[name][ext][query]'
-                }
-
-            },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
@@ -95,22 +91,8 @@ module.exports = {
                 test: /\.html$/i,
                 loader: "html-loader",
                 options: {
-                    sources: {
-                        list: [
-                            // All default supported tags and attributes
-                            "...",
-                            {
-                                tag: "img",
-                                attribute: "data-src",
-                                type: "src",
-                            },
-                            {
-                                tag: "img",
-                                attribute: "data-srcset",
-                                type: "srcset",
-                            },
-                        ],
-                    },
+                    minimize: false,
+                    sources: false,
                 },
             },
             {
@@ -122,35 +104,16 @@ module.exports = {
                         options: {
                             // 不壓縮 HTML
                             minimize: false,
-                            sources: {
-                                list: [
-                                    // All default supported tags and attributes
-                                    "...",
-                                    {
-                                        tag: "img",
-                                        attribute: "data-src",
-                                        type: "src",
-                                    },
-                                    {
-                                        tag: "img",
-                                        attribute: "data-srcset",
-                                        type: "srcset",
-                                    },
-                                    {
-                                        tag: "source",
-                                        attribute: "data-srcset",
-                                        type: "srcset",
-                                    },
-                                ],
-                            },
+                            sources: false,
                         }
                     },
                     {   //編譯pug檔案
                         loader: 'pug-html-loader',
                         options: {
                             // 美化 HTML 的編排 (不壓縮HTML的一種)
-                            pretty: true,
-
+                            pretty: false,
+                            minimize: false,
+                            sources: false,
                         }
                     }
                 ],

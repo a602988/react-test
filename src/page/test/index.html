@@ -6,26 +6,43 @@
     <meta name="viewport" content="width=device-width">
 
     <title>Silly story generator</title>
-
+    <style>
+        .box {
+            width: 300px;
+            border: 1px solid #000;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .toggle-container {
+            transition: height 0.15s ease-in-out;
+            overflow: hidden;
+        }
+        .toggle-container:not(.active) {
+            display: none;
+        }
+    </style>
 </head>
 
-<body>
-<h1>Image gallery example</h1>
-
-<div class="full-img">
-    <img class="displayed-img" src="~img/example/test1.jpeg">
-    <div class="overlay"></div>
-    <button class="dark">Darken</button>
+<body><div class="box">
+    <div class="js-toggle" data-container="toggle-1">Click</div>
+    <div class="toggle-container" id="toggle-1">I have an accordion and am animating the the height for a show reveal - the issue is the height which i need to set to auto as the information is different lengths.<br><br>
+        I have an accordion and am animating the the height fferent lengths.
+    </div>
 </div>
 
-<div class="thumb-bar">
-<ul>
-    <li><img src="~img/example/test1.jpeg" alt="test1"></li>
-    <li><img src="~img/example/test2.jpeg" alt="test2"></li>
-    <li><img src="~img/example/test3.jpeg" alt="test3"></li>
-    <li><img src="~img/example/test4.jpeg" alt="test4"></li>
-    <li><img src="~img/example/test5.jpeg" alt="test5"></li>
-</ul>
+<div class="box">
+    <div class="js-toggle active" data-container="toggle-2">Click</div>
+    <div class="toggle-container open" id="toggle-2">I have an accordion and am animating the the height for a show reveal - the issue is the height which i need to set to auto as the information is different lengths.<br><br>
+        I have an accordion and am animating the the height fferent lengths.
+    </div>
 </div>
+
+<div class="box">
+    <div class="js-toggle" data-container="toggle-3">Click</div>
+    <div class="toggle-container" id="toggle-3">I have an accordion and am animating the the height for a show reveal - the issue is the height which i need to set to auto as the information is different lengths.<br><br>
+        I have an accordion and am animating the the height fferent lengths.
+    </div>
+</div>
+<button class="js-toggle-btn" data-current="toggle-1">點我</button>
 </body>
 </html>
